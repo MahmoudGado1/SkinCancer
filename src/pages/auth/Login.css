@@ -8,7 +8,7 @@
 /* Left section with custom background */
 .left-section {
   flex: 1; /* Takes up 50% of the space */
-  background-color: #0D6EFD; /* Adjust the color as needed */
+  background-color: #0d6efd; /* Adjust the color as needed */
   color: white;
   display: flex;
   justify-content: center;
@@ -16,7 +16,7 @@
   text-align: center;
   padding: 20px;
 }
-.left-section a{
+.left-section a {
   position: absolute;
   top: 2%;
   left: 3%;
@@ -40,26 +40,13 @@
   align-items: center;
   background-color: #f9f9f9;
 }
-.right-section .a1{
+.right-section .a1 {
   position: absolute;
   top: 2%;
   left: 3%;
   display: none;
 }
 
-/* Hide the left section on small screens */
-@media (max-width: 850px) {
-  .left-section {
-    display: none;
-  }
-
-  .right-section {
-    flex: 1 1 100%; /* Take full width */
-  }
-  .right-section .a1{
-    display: block;
-  }
-}
 
 /* Login container */
 .login-container {
@@ -75,7 +62,7 @@
 /* Form heading */
 .login-container h2 {
   text-align: center;
-  color: #0D6EFD;
+  color: #0d6efd;
   margin-bottom: 10px;
 }
 
@@ -99,7 +86,7 @@
 }
 
 .login-container input:focus {
-  border-color: #0D6EFD;
+  border-color: #0d6efd;
   box-shadow: 0 0 3px #0b4294;
 }
 
@@ -117,7 +104,7 @@
 }
 
 .link-container a {
-  color: #0D6EFD;
+  color: #0d6efd;
   text-decoration: none;
   font-weight: bold;
 }
@@ -134,3 +121,21 @@
 }
 
 
+/* Hide the left section on small screens */
+@media (max-width: 850px) {
+  .left-section {
+    display: none;
+  }
+
+  .right-section {
+    flex: 1 1 100%; /* Take full width */
+  }
+  .right-section .a1 {
+    display: block;
+  }
+  /* Login container */
+.login-container {
+  box-shadow:none;
+}
+
+}

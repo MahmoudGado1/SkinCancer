@@ -4,10 +4,10 @@ import Doctors from "../../components/Doctors/Doctors";
 const DoctorsPage = () => {
   return (
     <div>
-      <BgSection message={"Doctors"}/>
-      <Doctors/>
+      <BgSection message={"Doctors"} position={"Doctors"}/>
+      <Doctors />
     </div>
   );
-}
+};
 
 export default DoctorsPage;

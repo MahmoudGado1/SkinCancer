@@ -10,7 +10,7 @@ import Logo from "../../assets/logo/logo.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Header.css";
 function Header() {
-  const location=useLocation();
+  const location = useLocation();
 
   const [showOffcanvas, setShowOffcanvas] = useState(false);
   const navigate = useNavigate();
@@ -39,36 +39,37 @@ function Header() {
 
   return (
     <header>
-      {(location.pathname.includes("/login") || location.pathname.includes("/register"))? null:
-      <Navbar expand="lg" className="bg-body-tertiary ">
-        <Container fluid>
-          <Navbar.Brand>
-            <Link to={"/"}>
-              <img src={Logo} alt="medical" />
-            </Link>
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="offcanvasNavbar" onClick={handleShow} />
-          <Navbar.Offcanvas
-            id="offcanvasNavbar"
-            aria-labelledby="offcanvasNavbarLabel"
-            placement="start"
-            show={showOffcanvas}
-            onHide={handleClose}
-          >
-            <Offcanvas.Header closeButton>
-              <Offcanvas.Title id="offcanvasNavbarLabel">
-                <Link to={"/"}>
-                  <img src={Logo} alt="medical" />
-                </Link>
-              </Offcanvas.Title>
-            </Offcanvas.Header>
+      {location.pathname.includes("/login") ||
+      location.pathname.includes("/register") ? null : (
+        <Navbar expand="lg" className="bg-body-tertiary ">
+          <Container fluid>
+            <Navbar.Brand>
+              <Link to={"/"}>
+                <img src={Logo} alt="medical" />
+              </Link>
+            </Navbar.Brand>
+            <Navbar.Toggle
+              aria-controls="offcanvasNavbar"
+              onClick={handleShow}
+            />
+            <Navbar.Offcanvas
+              id="offcanvasNavbar"
+              aria-labelledby="offcanvasNavbarLabel"
+              placement="start"
+              show={showOffcanvas}
+              onHide={handleClose}
+            >
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title id="offcanvasNavbarLabel">
+                  <Link to={"/"}>
+                    <img src={Logo} alt="medical" />
+                  </Link>
+                </Offcanvas.Title>
+              </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-center flex-grow-1 pe-3">
                   <Nav.Link>
                     <Link to={"/"}>Home</Link>
-                  </Nav.Link>
-                  <Nav.Link>
-                    <Link to={"/appointment"}>Appointment</Link>
                   </Nav.Link>
                   <Nav.Link>
                     <Link to={"/skin-Cancer"}>SkinCancer</Link>
@@ -76,22 +77,24 @@ function Header() {
                   <Nav.Link>
                     <Link to={"/doctors"}>Doctors</Link>
                   </Nav.Link>
+                  <Link>
+                  </Link>
                   <NavDropdown title="Department" id="offcanvasNavbarDropdown">
                     <NavDropdown.Item>
-                      <Link to={"/Dentistry"}>Dentistry</Link>
+                      <Link to={"/dentistry"}>Dentistry</Link>
                     </NavDropdown.Item>
                     <NavDropdown.Item>
-                      <Link to={"/Neuroantomy"}>Neuroantomy</Link>
+                      <Link to={"/ent-specialists"}>ENT Specialists</Link>
                     </NavDropdown.Item>
                     <NavDropdown.Item>
-                      <Link to={"/Cardiology"}>Cardiology</Link>
+                      <Link to={"/neuroantomy"}>Neuroantomy</Link>
                     </NavDropdown.Item>
                     <NavDropdown.Item>
-                      <Link to={"/Astrology"}>Astrology</Link>
+                      <Link to={"/astrology"}>Astrology</Link>
                     </NavDropdown.Item>
                   </NavDropdown>
                   <Nav.Link>
-                    <Link to={"/About"}>About</Link>
+                    <Link to={"/about"}>About</Link>
                   </Nav.Link>
                 </Nav>
                 <Form className="d-flex me-4">
@@ -100,11 +103,12 @@ function Header() {
                   </Button>
                 </Form>
               </Offcanvas.Body>
-          </Navbar.Offcanvas>
-        </Container>
-      </Navbar>}
+            </Navbar.Offcanvas>
+          </Container>
+        </Navbar>
+      )}
     </header>
-  )
+  );
 }
 
 export default Header;

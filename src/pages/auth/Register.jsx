@@ -98,13 +98,7 @@ const Register = () => {
             )}
             {step === 2 && (
               <>
-                <input
-                  type="text"
-                  name="nic"
-                  placeholder="NIC"
-                  value={formData.nic}
-                  onChange={handleInputChange}
-                />
+                
                 <input
                   type="date"
                   name="dob"
